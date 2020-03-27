@@ -19,13 +19,18 @@ inquirer
         },
         {
             type: "input",
-            message: "What is your preferred method of communication? (email, text, phone)",
-            name: "commMethod"
+            message: "Please give a description of your project.",
+            name: "description"
+        },
+        {
+            type: "input",
+            message: "What are the instructions for installation?",
+            name: "installInstructions"
         }
     ])
     .then(response => {
         console.log("This information has been recorded as: " + response.name +
-            ", " + response.projectName + ", " + response.commMethod);
+            ", " + response.projectName + ", " + response.description + ", " + response.installInstructions);
 
         // if (response.confirm === response.password) {
 
