@@ -1,4 +1,4 @@
-console.log("Beginning")
+// console.log("Beginning")
 
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -11,6 +11,16 @@ inquirer
             type: "input",
             message: "What is your name?",
             name: "name"
+        },
+        {
+            type: "input",
+            message: "What is your email address?",
+            name: "email"
+        },
+        {
+            type: "input",
+            message: "What is your GitHub username?",
+            name: "github"
         },
         {
             type: "input",
@@ -29,8 +39,10 @@ inquirer
         }
     ])
     .then(response => {
-        console.log("This information has been recorded as: " + response.name +
-            ", " + response.projectName + ", " + response.description + ", " + response.installInstructions);
+        console.log("This information has been recorded as: ", response.name, ",", response.email,
+            ",", response.projectName, ",", response.description, ",", response.installInstructions);
+        console.log("https://github.com/" + response.github)
+        // Need to figure out back ticks
 
         // if (response.confirm === response.password) {
 
@@ -39,3 +51,25 @@ inquirer
         // }
     })
     .catch(err => console.log("Error in initial prompt:", err));
+
+
+// PSEUDO CODE:
+
+// * Functional, deployed application.
+
+// * GitHub repository with a unique name and a README describing project.
+
+// * The generated README includes a bio image from the user's GitHub profile.  --- Input requested but needs to write to readme
+
+// * The generated README includes the user's email. --- Input requested but needs to write to readme
+
+// * The generated README includes the following sections: 
+//   * Title * Description --- Input requested for both of these. I need to write to readme
+
+// Need to have Table of Contents generate for the following:
+//   * Installation
+//   * Usage
+//   * License
+//   * Contributing
+//   * Tests
+//   * Questions (probably FAQ)
